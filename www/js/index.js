@@ -17,6 +17,8 @@
  * under the License.
  */
 var app = {
+	var baseAddress = "http://10.10.1.131/"
+
     // Application Constructor
     initialize: function() {
         this.bindEvents();
@@ -35,6 +37,8 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
     },
+	
+
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
@@ -43,7 +47,23 @@ var app = {
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
+		
+		//load index view from server
+		loadView('Pedidos');
+		
+		receivedElement.setAttribute('style', 'display:none;');
+		parentElement.setAttribute('style', 'display:none;');
 
         console.log('Received Event: ' + id);
-    }
+    },
+	
+	// to load views
+	loadView : function (view) {
+		var viewsElement = document.getElementById('views');
+		
+		$.get(baseAddress + view, function(data) {
+			viewsElement.innerHTML = data;
+		});	
+	}
+
 };
