@@ -21,8 +21,8 @@ var app = {
 
     // Application Constructor
     initialize: function() {
-        //this.bindEvents();
-        this.receivedEvent('deviceready');
+        this.bindEvents();
+        //this.receivedEvent('deviceready');
     },
     // Bind Event Listeners
     //
