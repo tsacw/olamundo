@@ -54,7 +54,8 @@ var app = {
 
 		console.log('Received Event: ' + id);
 
-		this.loadView('Pedidos');
+		window.location.href = app.baseAddress + 'Pedidos';
+		//this.loadView('Pedidos');
     },
 	
 	// to load views
