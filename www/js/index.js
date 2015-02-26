@@ -63,7 +63,7 @@ var app = {
 		$.ajax({
 			 url: app.baseAddress + view,
 			 type: "GET",
-			 success: function() { 
+			 success: function(data) { 
 				var viewsElement = document.getElementById('views');
 				viewsElement.innerHTML = data;
 			 }
