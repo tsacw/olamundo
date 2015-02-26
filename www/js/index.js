@@ -17,7 +17,7 @@
  * under the License.
  */
 var app = {
-	baseAddress:"http://10.10.1.131/",
+	baseAddress:"http://192.168.1.69/",
 
     // Application Constructor
     initialize: function() {
@@ -51,7 +51,9 @@ var app = {
 		receivedElement.setAttribute('style', 'display:none;');
 		parentElement.setAttribute('style', 'display:none;');
 
-        console.log('Received Event: ' + id);
+		console.log('Received Event: ' + id);
+
+		this.loadView('Pedidos');
     },
 	
 	// to load views
