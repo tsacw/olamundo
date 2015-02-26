@@ -17,11 +17,12 @@
  * under the License.
  */
 var app = {
-	var baseAddress = "http://10.10.1.131/"
+	baseAddress:"http://10.10.1.131/",
 
     // Application Constructor
     initialize: function() {
-        this.bindEvents();
+        //this.bindEvents();
+		app.loadView('Pedidos');
     },
     // Bind Event Listeners
     //
@@ -59,11 +60,14 @@ var app = {
 	
 	// to load views
 	loadView : function (view) {
-		var viewsElement = document.getElementById('views');
-		
-		$.get(baseAddress + view, function(data) {
-			viewsElement.innerHTML = data;
-		});	
+		$.ajax({
+			 url: app.baseAddress + view,
+			 type: "GET",
+			 success: function() { 
+				var viewsElement = document.getElementById('views');
+				viewsElement.innerHTML = data;
+			 }
+		  });
 	}
 
 };
