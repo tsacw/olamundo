@@ -49,7 +49,7 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 		
 		//load index view from server
-		loadView('Pedidos');
+		app.loadView('Pedidos');
 		
 		receivedElement.setAttribute('style', 'display:none;');
 		parentElement.setAttribute('style', 'display:none;');
