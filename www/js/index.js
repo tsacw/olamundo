@@ -21,8 +21,7 @@ var app = {
 
     // Application Constructor
     initialize: function() {
-        //this.bindEvents();
-		app.loadView('Pedidos');
+        this.bindEvents();
     },
     // Bind Event Listeners
     //
@@ -48,10 +47,7 @@ var app = {
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-		
-		//load index view from server
-		app.loadView('Pedidos');
-		
+				
 		receivedElement.setAttribute('style', 'display:none;');
 		parentElement.setAttribute('style', 'display:none;');
 
